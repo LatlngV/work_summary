@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_patrol_problem_user,patrol_problem.user,model_latlng_patrol_problem,group_work_summary_user,1,0,0,0
+access_patrol_problem_manager,patrol_problem.manager,model_latlng_patrol_problem,group_work_summary_manager,1,1,1,1
+access_problem_detail_user,problem_detail.user,model_latlng_problem_detail,group_work_summary_user,1,0,0,0
+access_problem_detail_manager,problem_detail.manager,model_latlng_problem_detail,group_work_summary_manager,1,1,1,1
+access_work_log_user,work_log.user,model_latlng_work_log,group_work_summary_user,1,0,0,0
+access_work_log_manager,work_log.manager,model_latlng_work_log,group_work_summary_manager,1,1,1,1

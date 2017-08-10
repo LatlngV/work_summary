@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <report
+                id="report_patrol_problem"
+                string="巡线软件问题"
+                model="latlng.patrol_problem"
+                report_type="qweb-pdf"
+                file="report_patrol_problem"
+                name="work_summary.report_patrol_problem_view"/>
+
+    </data>
+</odoo>

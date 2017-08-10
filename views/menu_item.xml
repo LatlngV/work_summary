@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <menuitem
+                id="menu_root"
+                name="工作总结"
+                groups="group_work_summary_manager,group_work_summary_user"/>
+
+        <menuitem
+                id="menu_work_log"
+                name="工作日志"
+                parent="menu_root"
+                action="work_log_action"
+                groups="group_work_summary_manager,group_work_summary_user"/>
+        <menuitem
+                id="menu_patrol_problem"
+                name="巡线软件问题"
+                parent="menu_root"
+                action="patrol_problem_action"
+                groups="group_work_summary_manager,group_work_summary_user"/>
+
+    </data>
+</odoo>

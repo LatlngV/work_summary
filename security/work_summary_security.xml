@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="module_category_work_summary" model="ir.module.category">
+            <field name="name">工作总结</field>
+            <field name="description">帮助你更好的区分管理员和员工权限</field>
+        </record>
+
+        <record id="group_work_summary_user" model="res.groups">
+            <field name="name">员工</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="module_category_work_summary"/>
+        </record>
+        <record id="group_work_summary_manager" model="res.groups">
+            <field name="name">管理员</field>
+            <field name="implied_ids" eval="[(4, ref('group_work_summary_user'))]"/>
+            <field name="category_id" ref="module_category_work_summary"/>
+        </record>
+
+    </data>
+</odoo>

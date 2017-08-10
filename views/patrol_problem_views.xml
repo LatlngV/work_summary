@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="patrol_problem_tree" model="ir.ui.view">
+            <field name="name">patrol_problem.tree</field>
+            <field name="model">latlng.patrol_problem</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="problem_count"/>
+                    <field name="fonder"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+        <record id="patrol_problem_form" model="ir.ui.view">
+            <field name="name">patrol_problem.form</field>
+            <field name="model">latlng.patrol_problem</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_print_report" string="打印" type="object"
+                                groups="work_summary.group_work_summary_manager"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="title"/>
+                            <field name="fonder" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="create_date"/>
+                        </group>
+                        <notebook>
+                            <page string="问题详情">
+                                <field name="problem_line">
+                                    <tree>
+                                        <field name="number"/>
+                                        <field name="name"/>
+                                        <field name="complete"/>
+                                        <field name="complete_date"/>
+                                        <field name="principal"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="patrol_problem_search" model="ir.ui.view">
+            <field name="name">patrol_problem.search</field>
+            <field name="model">latlng.patrol_problem</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="title"/>
+                    <field name="fonder"/>
+                    <field name="create_date"/>
+                </search>
+            </field>
+        </record>
+        <record id="patrol_problem_kanban" model="ir.ui.view">
+            <field name="name">patrol_problem.kanban</field>
+            <field name="model">latlng.patrol_problem</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="title"/>
+                    <field name="fonder"/>
+                    <field name="create_date"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('latlng.patrol_problem', 'image_medium', record.id.value)"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="title"/>
+                                    </strong>
+                                    <ul>
+                                        <li t-if="record.fonder.raw_value">
+                                            <field name="fonder"/>
+                                        </li>
+                                        <li t-if="record.create_date.raw_value">
+                                            <field name="create_date"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="problem_detail_form" model="ir.ui.view">
+            <field name="name">problem_detail.form</field>
+            <field name="model">latlng.problem_detail</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="number"/>
+                            <field name="name"/>
+                            <field name="detail"/>
+                            <field name="principal"/>
+                            <field name="complete"/>
+                            <field name="complete_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="patrol_problem_action" model="ir.actions.act_window">
+            <field name="name">巡线软件问题</field>
+            <field name="res_model">latlng.patrol_problem</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form,search</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    创建你的第一个有关于巡线软件的问题。
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
