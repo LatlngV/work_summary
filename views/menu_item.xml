@@ -17,8 +17,9 @@
                 id="menu_patrol_problem"
                 name="巡线软件问题"
                 parent="menu_root"
-                action="patrol_problem_action"
+                action="wizard_password_action"
                 groups="group_work_summary_manager,group_work_summary_user"/>
+        <!--action="patrol_problem_action"-->
 
     </data>
 </odoo>

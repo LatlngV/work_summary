@@ -14,6 +14,7 @@
         "views/menu_item.xml",
         "report/patrol_problem_report.xml",
         "report/patrol_problem_templates.xml",
+        "wizard/password_views.xml",
     ],
     "installable": True,
     "application": True,

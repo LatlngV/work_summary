@@ -27,7 +27,7 @@ class PatrolProblem(models.Model):
         """
             打印报表
         """
-        return self.env["report"].get_action(self, "report_patrol_problem_view")
+        return self.env["report"].get_action(self, "work_summary.report_patrol_problem_view")
 
 
 class ProblemDetail(models.Model):
